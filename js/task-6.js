@@ -1,16 +1,15 @@
-const checkForSpam = function(message) {
-  return (message.split(' ').includes('spam' || 'sale'));
-    
-  
+let input;
+const numbers = [];
+let total = 0;
+
+do {
+  input = prompt('Введите произвольное число');
+  numbers.push(Number(input));
+} while (input !== null);
+
+if (numbers.length > 0) {
+  for (const number of numbers) {
+    total += number; 
+  }
 };
-
-/*
- * Вызовы функции для проверки работоспособности твоей реализации.
- */
-console.log(checkForSpam('Latest technology news')); // false
-
-console.log(checkForSpam('JavaScript weekly newsletter')); // false
-
-console.log(checkForSpam('Get best sale offers now!')); // true
-
-console.log(checkForSpam('[SPAM] How to earn fast money?')); // true
+alert(`Общая сумма чисел равна ${total}`);
